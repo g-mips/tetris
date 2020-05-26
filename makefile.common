@@ -1,0 +1,41 @@
+CC      := gcc
+LIBS    += -lncurses
+CFLAGS  += -Wall -Werror -Wpedantic -Wstrict-prototypes
+LDFLAGS +=
+
+INCS := -Iinc
+
+TYPE   ?= debug
+BLDDIR := bld
+SRCDIR ?= src
+INCDIR := inc
+OBJDIR := $(BLDDIR)
+BINDIR := bin/$(TYPE)
+
+SRCS := $(wildcard $(SRCDIR)/*.c)
+OBJS := $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
+
+HEADERS  = $(wildcard inc/*.h)
+HEADERS += $(wildcard $(SRCDIR/*.h))
+
+TARGET ?= tetris
+
+.PHONY: all
+all: $(BINDIR)/$(TARGET) $(OBJS)
+
+$(BINDIR)/$(TARGET): $(OBJS)
+	-mkdir -p $(BINDIR)
+	$(CC) -o $@ $^ $(LDFLAGS) $(LIBS)
+
+$(OBJS): $(OBJDIR)/%.o: %.c $(HEADERS)
+	-mkdir -p $(dir $@)
+	$(CC) -c -o $@ $(INCS) $< $(CFLAGS)
+
+.PHONY: clean
+clean:
+	-rm $(BLDDIR)/$(TYPE) -rf
+	-rm $(BINDIR) -rf
+
+.PHONY: run
+run:
+	./$(BINDIR)/$(TARGET)
