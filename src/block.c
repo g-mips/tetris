@@ -1,9 +1,11 @@
+#include <stdlib.h>
+
 #include "block.h"
 
-enum block_type
+static enum block_type
 type_randomizer(void)
 {
-    return(-1);
+    return(rand() % NUM_BLOCK_TYPES);
 }
 
 struct block
