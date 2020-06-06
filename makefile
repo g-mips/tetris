@@ -12,7 +12,7 @@ release:
 .PHONY: test
 test:
 	$(MAKE) -f makefile.common SRCDIR=test/unit TARGET=test_units \
-		TYPE=test CFLAGS="-g -O0" LIBS=-lcheck
+		TYPE=test CFLAGS="-g -O0" LIBS=-lcheck LDFLAGS="-Wl,--wrap=rand"
 
 .PHONY: clean-dbg
 clean-dbg:
