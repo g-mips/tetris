@@ -9,7 +9,9 @@ enum block_type
     BLOCK_TYPE_J_BLOCK,
     BLOCK_TYPE_SQUARE,
     BLOCK_TYPE_I_BLOCK,
-    BLOCK_TYPE_T_BLOCK
+    BLOCK_TYPE_T_BLOCK,
+
+    NUM_BLOCK_TYPES
 };
 
 struct block
