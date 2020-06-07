@@ -13,11 +13,14 @@ enum block_type
 
     NUM_BLOCK_TYPES
 };
+_Static_assert((BLOCK_TYPE_S_BLOCK == 0),
+    "Block types have shifted positions."
+    " Please reevaluate code");
 
 struct block
 {
-    int color;
-    int type;
+    unsigned int color;
+    unsigned int type;
 };
 
 struct block block_generate(void);
