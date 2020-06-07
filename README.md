@@ -22,6 +22,7 @@ and have more experience programming TUIs.
 - Decide on a testing framework to use for tests.
 - The game will be over once blocks get past the highest spot on the
   playing area.
+- Game state will be saved to allow for the game to be played
 
 ### Stretch Goals/Requirements:
 
@@ -31,6 +32,6 @@ and have more experience programming TUIs.
   Once a game over has occured, this will be written into a high
   score file that can be viewed.
 - Implements 10 different levels that vary in difficulty based on speed (and
-  maybe the commonality of different pieces **RESEARCH**
+  maybe the commonality of different pieces **RESEARCH**)
 - Design a menu screen for playing the game, quitting, and (if a previous
   strectch goal is met) viewing high scores.
