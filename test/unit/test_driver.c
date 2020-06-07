@@ -21,6 +21,8 @@ run(SRunner *sr)
 int
 main(void)
 {
+    srand(time(NULL));
+
     SRunner *sr = setup_runner();
     int number_failed = run(sr);
     srunner_free(sr);
