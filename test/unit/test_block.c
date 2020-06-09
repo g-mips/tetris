@@ -175,7 +175,7 @@ START_TEST (test_block_get_color_out_of_range)
 END_TEST
 
 Suite *
-test_block_generate_suite(void)
+test_block_suite(void)
 {
     int iterations_modifier = (__real_rand() % 150000) + 400000;
     int num_iterations = RAND_MAX / iterations_modifier;

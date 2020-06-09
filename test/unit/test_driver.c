@@ -1,13 +1,16 @@
 #include <stdlib.h>
+#include <time.h>
 
 #include <check.h>
 
 #include "test_block.h"
+#include "test_board.h"
 
 SRunner *
 setup_runner(void)
 {
-    SRunner *sr = srunner_create(test_block_generate_suite());
+    SRunner *sr = srunner_create(test_block_suite());
+    srunner_add_suite(sr, test_board_suite());
     return sr;
 }
 
